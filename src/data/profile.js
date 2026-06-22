@@ -1,8 +1,8 @@
 export const profile = {
   name              : "Husinat Azeez",
   role              : "Full-Stack Developer",
-  tagline           : "Learning, building, and creating web applications that solve real problems.",
-  bio               : "I'm a Full-Stack Developer in training with a background in Mass Communication. I transitioned into tech in 2024 and have been building steadily ever since — from HTML and CSS through JavaScript and React, and now into backend development with Node.js and MongoDB. I build real projects to learn, document the process publicly, and approach every challenge with curiosity and discipline.",
+  tagline           : "Building thoughtful full-stack applications with clear user flows, reliable systems, and a strong sense of communication.",
+  bio               : "I'm a Full-Stack Developer with a background in Mass Communication, design thinking, and storytelling. I build practical web applications across the frontend and backend, combining React interfaces, Node.js APIs, authentication flows, and database-driven features with a clear eye for user experience.",
   status            : "Open to Opportunities",
   availability      : "Available for Internships & Junior Developer Roles",
   currentlyBuilding : "MERN Applications",

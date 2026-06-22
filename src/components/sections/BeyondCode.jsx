@@ -8,7 +8,7 @@ import { beyondCodeItems }   from '../../data/beyondCode'
  */
 export function BeyondCode() {
   return (
-    <section id="beyond-code" className="section-padding">
+    <section id="beyond-code" className="section-band section-padding">
       <div className="max-w-6xl mx-auto">
         <SectionTitle
           title="Beyond Code"

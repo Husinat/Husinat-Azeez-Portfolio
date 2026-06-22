@@ -10,11 +10,11 @@ import { chapters }         from '../../data/evolution'
  */
 export function Evolution() {
   return (
-    <section id="evolution" className="section-padding">
-      <div className="max-w-6xl mx-auto">
+    <section id="evolution" className="section-band-soft section-padding">
+      <div className="mx-auto max-w-6xl">
         <SectionTitle
           title="Evolution"
-          subtitle="Seven chapters. One connected story. Click any chapter to read it."
+          subtitle="The story of how communication, design, and engineering became one connected path."
         />
 
         <EvolutionJourney chapters={chapters} />

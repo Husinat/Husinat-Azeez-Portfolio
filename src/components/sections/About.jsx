@@ -1,48 +1,67 @@
 import { SectionTitle } from '../ui/SectionTitle'
 import { profile }      from '../../data/profile'
 
+const strengths = [
+  { label: 'Communication', value: 'Clear writing, audience awareness, and structured thinking' },
+  { label: 'Product Mindset', value: 'Interfaces and flows designed around real user needs' },
+  { label: 'Engineering Focus', value: 'React, APIs, authentication, and database-backed features' },
+]
+
 /**
  * About
- * Text-forward section: SectionTitle + extended bio.
+ * Professional context, background, and strengths.
  */
 export function About() {
   return (
-    <section id="about" className="section-padding">
-      <div className="max-w-6xl mx-auto">
+    <section id="about" className="section-band-soft section-padding">
+      <div className="mx-auto max-w-6xl">
         <SectionTitle
           title="About"
-          subtitle="The background behind the code."
+          subtitle="A communication-first developer building practical web products."
         />
 
-        <div className="grid md:grid-cols-2 gap-10 lg:gap-20">
-          <div className="space-y-4">
-            <p className="font-body text-muted leading-relaxed">
-              I'm a Full-Stack Developer with a background in Mass Communication. I transitioned into tech in 2024 and have spent every month since building, learning, and documenting the process.
+        <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
+          <div className="space-y-5">
+            <p className="font-body text-lg leading-8 text-headline">
+              I build full-stack applications with the discipline of a developer and the instincts of a communicator.
             </p>
-            <p className="font-body text-muted leading-relaxed">
-              My path into development wasn't a straight line — it started with studying how people communicate, which gave me a foundation I still draw on today. Every project I build is a deliberate attempt to understand something new.
+            <p className="font-body leading-8 text-muted">
+              My background in Mass Communication shaped how I think about clarity, audience, and structure. That perspective now informs how I design interfaces, write code, document decisions, and turn ideas into usable products.
             </p>
-            <p className="font-body text-muted leading-relaxed">
-              I'm currently focused on full-stack development with the MERN stack, building real applications and putting the process in public.
+            <p className="font-body leading-8 text-muted">
+              I am focused on modern JavaScript development across React, Node.js, Express, MongoDB, Firebase, and REST APIs, with a growing body of projects that connect design thinking to working software.
             </p>
           </div>
 
-          <div className="space-y-4">
-            <div className="bg-surface border border-elevated rounded-xl p-5">
-              <p className="font-mono text-xs text-teal mb-3 uppercase tracking-widest">Quick facts</p>
-              <dl className="space-y-3">
-                {[
-                  { label: 'Location',   value: 'Nigeria'                  },
-                  { label: 'Background', value: 'Mass Communication'       },
-                  { label: 'Focus',      value: 'Full-Stack (MERN)'        },
-                  { label: 'Status',     value: profile.availability       },
-                ].map(({ label, value }) => (
-                  <div key={label} className="flex gap-3">
-                    <dt className="font-mono text-xs text-muted/60 w-28 shrink-0 pt-0.5">{label}</dt>
-                    <dd className="font-body text-sm text-headline">{value}</dd>
-                  </div>
-                ))}
-              </dl>
+          <div className="rounded-2xl border border-elevated bg-space/30 p-5">
+            <div className="mb-5 flex items-center justify-between gap-4">
+              <p className="font-mono text-xs uppercase tracking-widest text-teal">Professional snapshot</p>
+              <span className="rounded-full border border-teal/20 bg-teal/10 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-teal">
+                {profile.role}
+              </span>
+            </div>
+
+            <dl className="mb-6 grid gap-3">
+              {[
+                { label: 'Location',   value: 'Nigeria' },
+                { label: 'Background', value: 'Mass Communication, storytelling, design' },
+                { label: 'Focus',      value: 'Full-stack products and MERN applications' },
+                { label: 'Status',     value: profile.availability },
+              ].map(({ label, value }) => (
+                <div key={label} className="grid gap-1 border-b border-elevated/60 pb-3 last:border-b-0 last:pb-0 sm:grid-cols-[120px_1fr]">
+                  <dt className="font-mono text-xs text-muted/60">{label}</dt>
+                  <dd className="font-body text-sm leading-relaxed text-headline">{value}</dd>
+                </div>
+              ))}
+            </dl>
+
+            <div className="grid gap-3">
+              {strengths.map((item) => (
+                <div key={item.label} className="rounded-xl border border-elevated/70 bg-surface/70 p-4">
+                  <p className="font-body text-sm font-semibold text-headline">{item.label}</p>
+                  <p className="mt-1 font-body text-xs leading-relaxed text-muted">{item.value}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>

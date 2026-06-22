@@ -2,38 +2,40 @@ import { Tag } from '../ui/Tag'
 
 /**
  * ChapterDetail
- * Rendered beneath the ChapterTrack when a chapter is expanded.
- * Shows: narrative, What I Learned list, Skills Gained pills, Related Projects links.
+ * Editorial narrative panel for the selected chapter.
  */
 export function ChapterDetail({ chapter }) {
   return (
-    <div className="animate-slide-up mt-6 bg-surface border border-teal/30 rounded-xl p-6 md:p-8">
-      <div className="grid md:grid-cols-3 gap-8">
+    <div className="mt-6 animate-panel-in overflow-hidden rounded-2xl border border-teal/30 bg-surface/90 shadow-[0_28px_90px_rgba(0,0,0,0.24)]">
+      <div className="border-b border-elevated/70 bg-space/25 px-6 py-4 md:px-8">
+        <p className="font-mono text-xs uppercase tracking-widest text-teal">
+          Chapter {chapter.chapter} / {chapter.period}
+        </p>
+      </div>
 
-        {/* Narrative */}
-        <div className="md:col-span-2 space-y-6">
-          <div>
-            <p className="font-mono text-xs text-teal mb-3 uppercase tracking-widest">
-              Chapter {chapter.chapter} · {chapter.period}
-            </p>
-            <h3 className="font-display text-2xl text-headline mb-4">
+      <div className="grid gap-8 p-6 md:grid-cols-3 md:p-8">
+        <div className="space-y-6 md:col-span-2">
+          <div className="animate-fade-up">
+            <h3 className="mb-4 font-display text-3xl leading-tight text-headline md:text-4xl">
               {chapter.stage}
             </h3>
-            <p className="font-body text-muted leading-relaxed text-sm">
+            <p className="max-w-2xl font-body text-sm leading-7 text-muted md:text-base">
               {chapter.narrative}
             </p>
           </div>
 
-          {/* What I Learned */}
           {chapter.learned.length > 0 && (
-            <div>
-              <h4 className="font-body text-xs font-semibold text-headline uppercase tracking-widest mb-3">
+            <div
+              className="animate-fade-up rounded-xl border border-elevated/70 bg-space/20 p-5"
+              style={{ animationDelay: '80ms' }}
+            >
+              <h4 className="mb-4 font-body text-xs font-semibold uppercase tracking-widest text-headline">
                 What I Learned
               </h4>
-              <ul className="space-y-1.5">
+              <ul className="grid gap-2 sm:grid-cols-2">
                 {chapter.learned.map((item, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-muted">
-                    <span className="text-teal mt-0.5 shrink-0">→</span>
+                  <li key={i} className="flex items-start gap-2 text-sm leading-relaxed text-muted">
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-teal" />
                     {item}
                   </li>
                 ))}
@@ -42,11 +44,9 @@ export function ChapterDetail({ chapter }) {
           )}
         </div>
 
-        {/* Skills + Projects */}
-        <div className="space-y-6">
-          {/* Skills Gained */}
+        <div className="animate-fade-up space-y-6" style={{ animationDelay: '140ms' }}>
           <div>
-            <h4 className="font-body text-xs font-semibold text-headline uppercase tracking-widest mb-3">
+            <h4 className="mb-3 font-body text-xs font-semibold uppercase tracking-widest text-headline">
               Skills Gained
             </h4>
             <div className="flex flex-wrap gap-2">
@@ -56,17 +56,16 @@ export function ChapterDetail({ chapter }) {
             </div>
           </div>
 
-          {/* Related Projects */}
           {chapter.projects.length > 0 && (
             <div>
-              <h4 className="font-body text-xs font-semibold text-headline uppercase tracking-widest mb-3">
+              <h4 className="mb-3 font-body text-xs font-semibold uppercase tracking-widest text-headline">
                 Related Projects
               </h4>
               <div className="flex flex-col gap-1.5">
                 {chapter.projects.map((project) => (
                   <span
                     key={project}
-                    className="font-mono text-xs text-teal border border-teal/20 rounded-md px-2.5 py-1 bg-teal/5"
+                    className="rounded-md border border-teal/20 bg-teal/5 px-2.5 py-1 font-mono text-xs text-teal"
                   >
                     {project}
                   </span>
@@ -75,7 +74,6 @@ export function ChapterDetail({ chapter }) {
             </div>
           )}
         </div>
-
       </div>
     </div>
   )

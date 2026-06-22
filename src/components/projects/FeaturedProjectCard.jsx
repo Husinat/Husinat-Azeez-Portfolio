@@ -7,22 +7,25 @@ import { Tag }                           from '../ui/Tag'
  * Status: 'live' | 'building'
  */
 export function FeaturedProjectCard({ project }) {
+  const hasLinks = project.github || (project.live && project.status !== 'building')
+
   return (
-    <div className="group bg-surface border border-elevated rounded-xl overflow-hidden transition-all duration-300 hover:border-teal/40 flex flex-col">
+    <article className="group grid overflow-hidden rounded-2xl border border-elevated bg-surface transition-all duration-300 hover:-translate-y-1 hover:border-teal/40 hover:shadow-[0_24px_70px_rgba(0,0,0,0.22)] md:grid-cols-[0.9fr_1.1fr]">
 
       {/* Image */}
-      <div className="relative h-44 bg-elevated overflow-hidden">
+      <div className="relative min-h-56 overflow-hidden bg-elevated">
         {project.image ? (
           <img
             src={project.image}
             alt={project.title}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
           />
         ) : (
-          <div className="w-full h-full flex items-center justify-center">
-            <span className="font-display text-2xl text-elevated">{project.title[0]}</span>
+          <div className="flex h-full w-full items-center justify-center">
+            <span className="font-display text-4xl text-muted/30">{project.title[0]}</span>
           </div>
         )}
+        <div className="absolute inset-0 bg-gradient-to-t from-space/50 via-transparent to-transparent opacity-70" />
 
         {/* Status badge */}
         {project.status === 'building' && (
@@ -40,18 +43,36 @@ export function FeaturedProjectCard({ project }) {
       </div>
 
       {/* Content */}
-      <div className="p-5 flex flex-col flex-1 gap-3">
+      <div className="flex flex-col gap-4 p-5 md:p-6">
         <div>
-          <h3 className="font-body text-base font-semibold text-headline mb-1.5">
+          <p className="mb-3 font-mono text-xs uppercase tracking-widest text-teal">
+            Featured case study
+          </p>
+          <h3 className="mb-2 font-display text-2xl leading-tight text-headline">
             {project.title}
           </h3>
-          <p className="font-body text-sm text-muted leading-relaxed">
+          <p className="font-body text-sm leading-7 text-muted">
             {project.description}
           </p>
         </div>
 
+        <div className="grid grid-cols-2 gap-3 border-y border-elevated/70 py-3">
+          <div>
+            <p className="font-mono text-[10px] uppercase tracking-widest text-muted/60">Status</p>
+            <p className="mt-1 font-body text-sm text-headline">
+              {project.status === 'building' ? 'In development' : 'Built and presentable'}
+            </p>
+          </div>
+          <div>
+            <p className="font-mono text-[10px] uppercase tracking-widest text-muted/60">Focus</p>
+            <p className="mt-1 font-body text-sm text-headline">
+              {project.tech.slice(0, 2).join(' + ')}
+            </p>
+          </div>
+        </div>
+
         {/* Tech tags */}
-        <div className="flex flex-wrap gap-1.5 mt-auto pt-2">
+        <div className="mt-auto flex flex-wrap gap-1.5 pt-1">
           {project.tech.map((t) => (
             <Tag key={t} variant="default">{t}</Tag>
           ))}
@@ -81,8 +102,13 @@ export function FeaturedProjectCard({ project }) {
               Live
             </a>
           )}
+          {!hasLinks && (
+            <span className="font-mono text-xs text-muted/60">
+              Links will be added when public
+            </span>
+          )}
         </div>
       </div>
-    </div>
+    </article>
   )
 }

@@ -15,25 +15,27 @@ export function Philosophy() {
           subtitle="The principles I build by."
         />
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="overflow-hidden rounded-2xl border border-elevated bg-surface/70">
           {philosophyItems.map((item, index) => (
-            <div
+            <article
               key={item.id}
-              className="group bg-surface border border-elevated rounded-xl p-6 transition-all duration-300 hover:border-teal/40 hover:bg-elevated/50"
+              className="group grid gap-4 border-b border-elevated p-6 transition-colors duration-300 last:border-b-0 hover:bg-elevated/35 md:grid-cols-[120px_1fr]"
             >
               {/* Index number */}
-              <p className="font-mono text-5xl font-medium text-elevated group-hover:text-teal/20 transition-colors duration-300 mb-4 select-none leading-none">
+              <p className="select-none font-mono text-5xl font-medium leading-none text-elevated transition-colors duration-300 group-hover:text-teal/25 md:text-6xl">
                 {String(index + 1).padStart(2, '0')}
               </p>
 
-              <h3 className="font-display text-xl text-headline mb-3 leading-snug">
-                {item.principle}
-              </h3>
+              <div className="max-w-2xl">
+                <h3 className="mb-3 font-display text-2xl leading-snug text-headline md:text-3xl">
+                  {item.principle}
+                </h3>
 
-              <p className="font-body text-sm text-muted leading-relaxed">
-                {item.description}
-              </p>
-            </div>
+                <p className="font-body text-sm leading-7 text-muted md:text-base">
+                  {item.description}
+                </p>
+              </div>
+            </article>
           ))}
         </div>
       </div>

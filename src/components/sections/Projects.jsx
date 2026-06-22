@@ -1,38 +1,35 @@
-import { SectionTitle }       from '../ui/SectionTitle'
+import { SectionTitle }        from '../ui/SectionTitle'
 import { FeaturedProjectCard } from '../projects/FeaturedProjectCard'
 import { SmallProjectCard }    from '../projects/SmallProjectCard'
-import { projects }             from '../../data/projects'
+import { projects }            from '../../data/projects'
 
 const featured = projects.filter((p) => p.type === 'featured')
-const other     = projects.filter((p) => p.type === 'other')
+const other    = projects.filter((p) => p.type === 'other')
 
 /**
  * Projects section
- * Featured: 4 large cards (2-column grid).
- * Other: 4 small cards (2–4 column grid).
+ * Featured projects and supporting builds.
  */
 export function Projects() {
   return (
-    <section id="projects" className="section-padding">
-      <div className="max-w-6xl mx-auto">
+    <section id="projects" className="section-band section-padding">
+      <div className="mx-auto max-w-6xl">
         <SectionTitle
           title="Projects"
-          subtitle="What I've built — from early experiments to full-stack applications."
+          subtitle="Selected applications that show product thinking, interface work, and full-stack growth."
         />
 
-        {/* Featured */}
-        <div className="grid sm:grid-cols-2 gap-5 mb-12">
+        <div className="mb-12 grid gap-5 lg:grid-cols-2">
           {featured.map((project) => (
             <FeaturedProjectCard key={project.id} project={project} />
           ))}
         </div>
 
-        {/* Other projects */}
         <div className="mb-6">
-          <p className="font-mono text-xs text-muted uppercase tracking-widest mb-5">
-            Other Projects
+          <p className="mb-5 font-mono text-xs uppercase tracking-widest text-muted">
+            Supporting Builds
           </p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {other.map((project) => (
               <SmallProjectCard key={project.id} project={project} />
             ))}

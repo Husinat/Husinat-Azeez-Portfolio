@@ -7,7 +7,7 @@ import { Tag }    from '../ui/Tag'
  */
 export function SmallProjectCard({ project }) {
   return (
-    <div className="group bg-surface border border-elevated rounded-xl p-5 transition-all duration-300 hover:border-teal/40 hover:bg-elevated/50 flex flex-col gap-3">
+    <div className="group flex flex-col gap-3 rounded-xl border border-elevated bg-surface p-5 transition-all duration-300 hover:-translate-y-1 hover:border-teal/40 hover:bg-elevated/50">
 
       <div className="flex items-start justify-between gap-2">
         <h3 className="font-body text-sm font-semibold text-headline leading-snug">
@@ -28,6 +28,10 @@ export function SmallProjectCard({ project }) {
 
       <p className="font-body text-xs text-muted leading-relaxed flex-1">
         {project.description}
+      </p>
+
+      <p className="font-mono text-[10px] uppercase tracking-widest text-muted/50">
+        Early build / practice project
       </p>
 
       <div className="flex flex-wrap gap-1.5">

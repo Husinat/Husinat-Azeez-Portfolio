@@ -55,6 +55,14 @@
     @apply px-6 py-20 md:px-12 lg:px-24;
   }
 
+  .section-band {
+    @apply relative border-t border-elevated/45;
+  }
+
+  .section-band-soft {
+    @apply relative border-t border-elevated/45 bg-surface/25;
+  }
+
   .glass-card {
     @apply bg-surface border border-elevated rounded-xl;
   }
@@ -73,5 +81,18 @@
 
   .connector-line.active {
     @apply bg-teal;
+  }
+
+  .reveal-soft {
+    opacity: 0;
+    animation: fadeUp 0.65s ease forwards;
+  }
+
+  .premium-panel {
+    @apply bg-surface/90 border border-elevated/80 shadow-[0_24px_80px_rgba(0,0,0,0.22)];
+  }
+
+  .interactive-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:border-teal/40;
   }
 }

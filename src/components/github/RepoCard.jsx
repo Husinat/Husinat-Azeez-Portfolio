@@ -7,16 +7,21 @@ import { Tag }                from '../ui/Tag'
  * No fake language percentage bars.
  */
 export function RepoCard({ repo }) {
+  const isPublic = Boolean(repo.url)
+
   return (
-    <div className="group bg-surface border border-elevated rounded-xl p-5 transition-all duration-300 hover:border-teal/40 hover:bg-elevated/50 flex flex-col gap-4">
+    <article className="group flex min-h-52 flex-col gap-4 rounded-xl border border-elevated bg-surface p-5 transition-all duration-300 hover:-translate-y-1 hover:border-teal/40 hover:bg-elevated/50">
 
       {/* Header */}
       <div className="flex items-start justify-between gap-3">
         <div className="flex-1 min-w-0">
+          <p className="mb-2 font-mono text-[10px] uppercase tracking-widest text-teal">
+            {isPublic ? 'Public repository' : 'Repository profile'}
+          </p>
           <h3 className="font-mono text-sm font-medium text-headline truncate mb-1">
             {repo.name}
           </h3>
-          <p className="font-body text-xs text-muted leading-relaxed line-clamp-2">
+          <p className="font-body text-xs text-muted leading-relaxed line-clamp-3">
             {repo.description}
           </p>
         </div>
@@ -35,7 +40,7 @@ export function RepoCard({ repo }) {
       </div>
 
       {/* Footer meta */}
-      <div className="flex items-center justify-between gap-3 flex-wrap">
+      <div className="mt-auto flex flex-wrap items-end justify-between gap-3">
         <div className="flex flex-wrap gap-1.5">
           {/* Primary language badge */}
           <Tag variant="teal">{repo.language}</Tag>
@@ -52,6 +57,11 @@ export function RepoCard({ repo }) {
         </div>
       </div>
 
-    </div>
+      {!isPublic && (
+        <p className="border-t border-elevated/70 pt-3 font-mono text-[10px] uppercase tracking-widest text-muted/50">
+          Link pending
+        </p>
+      )}
+    </article>
   )
 }
