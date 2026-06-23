@@ -24,9 +24,9 @@ function ContactForm() {
 
   if (status === 'success') {
     return (
-      <div className="bg-surface border border-teal/30 rounded-xl p-8 flex flex-col items-start gap-4">
-        <div className="w-10 h-10 rounded-full bg-teal/10 border border-teal/20 flex items-center justify-center">
-          <span className="text-teal text-lg">✓</span>
+      <div className="bg-surface border border-amber/30 rounded-xl p-8 flex flex-col items-start gap-4">
+        <div className="w-10 h-10 rounded-full bg-amber/10 border border-amber/20 flex items-center justify-center">
+          <span className="text-amber text-lg">✓</span>
         </div>
         <div>
           <h3 className="font-body text-base font-semibold text-headline mb-1">Message sent.</h3>
@@ -60,7 +60,7 @@ function ContactForm() {
           className={[
             'w-full bg-surface border rounded-lg px-4 py-2.5 font-body text-sm text-headline placeholder:text-muted/40',
             'outline-none transition-colors duration-200',
-            'focus:border-teal/50 focus:ring-1 focus:ring-teal/30',
+            'focus:border-amber/50 focus:ring-1 focus:ring-amber/30',
             errors.name ? 'border-red-500/50' : 'border-elevated',
           ].join(' ')}
         />
@@ -85,7 +85,7 @@ function ContactForm() {
           className={[
             'w-full bg-surface border rounded-lg px-4 py-2.5 font-body text-sm text-headline placeholder:text-muted/40',
             'outline-none transition-colors duration-200',
-            'focus:border-teal/50 focus:ring-1 focus:ring-teal/30',
+            'focus:border-amber/50 focus:ring-1 focus:ring-amber/30',
             errors.email ? 'border-red-500/50' : 'border-elevated',
           ].join(' ')}
         />
@@ -109,7 +109,7 @@ function ContactForm() {
           className={[
             'w-full bg-surface border rounded-lg px-4 py-2.5 font-body text-sm text-headline placeholder:text-muted/40',
             'outline-none transition-colors duration-200 resize-none',
-            'focus:border-teal/50 focus:ring-1 focus:ring-teal/30',
+            'focus:border-amber/50 focus:ring-1 focus:ring-amber/30',
             errors.message ? 'border-red-500/50' : 'border-elevated',
           ].join(' ')}
         />
@@ -175,8 +175,8 @@ function DirectContact() {
       <div className="flex flex-col gap-3">
         {links.map(({ key, icon: Icon, label, href, display }) => (
           <div key={key} className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-lg bg-teal/10 border border-teal/20 flex items-center justify-center shrink-0">
-              <Icon size={15} className="text-teal" />
+            <div className="w-9 h-9 rounded-lg bg-amber/10 border border-amber/20 flex items-center justify-center shrink-0">
+              <Icon size={15} className="text-amber" />
             </div>
             <div className="min-w-0">
               <p className="font-mono text-xs text-muted/60 mb-0.5">{label}</p>
@@ -185,7 +185,7 @@ function DirectContact() {
                   href={href}
                   target={key !== 'email' ? '_blank' : undefined}
                   rel={key !== 'email' ? 'noopener noreferrer' : undefined}
-                  className="font-body text-sm text-headline hover:text-teal transition-colors duration-200 truncate block"
+                  className="font-body text-sm text-headline hover:text-amber transition-colors duration-200 truncate block"
                 >
                   {display}
                 </a>

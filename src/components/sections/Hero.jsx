@@ -18,7 +18,7 @@ export function Hero() {
           {/* Left: copy */}
           <div className="order-2 md:order-1 flex flex-col gap-6">
             <div className="flex flex-col gap-3">
-              <p className="reveal-soft font-mono text-sm uppercase tracking-widest text-teal">
+              <p className="reveal-soft font-mono text-sm uppercase tracking-widest text-amber">
                 {profile.status}
               </p>
               <h1

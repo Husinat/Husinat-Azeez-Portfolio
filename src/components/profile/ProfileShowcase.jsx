@@ -11,9 +11,9 @@ import { TechLabels }            from './TechLabels'
 export function ProfileShowcase({ profile }) {
   return (
     <div className="relative w-full max-w-sm">
-      <div className="absolute inset-0 rounded-3xl bg-teal/5 blur-2xl" />
+      <div className="absolute inset-0 rounded-3xl bg-amber/5 blur-2xl" />
       <div className="relative overflow-hidden rounded-3xl border border-elevated/80 bg-surface/80 p-5 shadow-[0_28px_90px_rgba(0,0,0,0.28)] backdrop-blur">
-        <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-teal/80 via-teal/20 to-transparent" />
+        <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-amber/80 via-amber/20 to-transparent" />
 
         <div className="flex flex-col items-center gap-5">
           <ProfileImage src="/images/profile-placeholder.jpg" alt={profile.name} />

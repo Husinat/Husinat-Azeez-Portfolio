@@ -6,9 +6,9 @@ import { Tag } from '../ui/Tag'
  */
 export function ChapterDetail({ chapter }) {
   return (
-    <div className="mt-6 animate-panel-in overflow-hidden rounded-2xl border border-teal/30 bg-surface/90 shadow-[0_28px_90px_rgba(0,0,0,0.24)]">
+    <div className="mt-6 animate-panel-in overflow-hidden rounded-2xl border border-amber/30 bg-surface/90 shadow-[0_28px_90px_rgba(0,0,0,0.24)]">
       <div className="border-b border-elevated/70 bg-space/25 px-6 py-4 md:px-8">
-        <p className="font-mono text-xs uppercase tracking-widest text-teal">
+        <p className="font-mono text-xs uppercase tracking-widest text-amber">
           Chapter {chapter.chapter} / {chapter.period}
         </p>
       </div>
@@ -35,7 +35,7 @@ export function ChapterDetail({ chapter }) {
               <ul className="grid gap-2 sm:grid-cols-2">
                 {chapter.learned.map((item, i) => (
                   <li key={i} className="flex items-start gap-2 text-sm leading-relaxed text-muted">
-                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-teal" />
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-amber" />
                     {item}
                   </li>
                 ))}
@@ -65,7 +65,7 @@ export function ChapterDetail({ chapter }) {
                 {chapter.projects.map((project) => (
                   <span
                     key={project}
-                    className="rounded-md border border-teal/20 bg-teal/5 px-2.5 py-1 font-mono text-xs text-teal"
+                    className="rounded-md border border-amber/20 bg-amber/5 px-2.5 py-1 font-mono text-xs text-amber"
                   >
                     {project}
                   </span>

@@ -23,7 +23,7 @@ export function Button({
 }) {
   const base = [
     'inline-flex items-center justify-center gap-2 font-body font-medium rounded-lg',
-    'transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal/60',
+    'transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber/60',
     'select-none cursor-pointer',
   ].join(' ')
 
@@ -34,8 +34,8 @@ export function Button({
   }
 
   const variants = {
-    primary   : 'bg-teal text-space hover:bg-teal/80 active:scale-[0.98]',
-    secondary : 'bg-elevated text-headline border border-elevated hover:border-teal/50 hover:bg-elevated/80 active:scale-[0.98]',
+    primary   : 'bg-amber text-space hover:bg-amber/80 active:scale-[0.98]',
+    secondary : 'bg-elevated text-headline border border-elevated hover:border-amber/50 hover:bg-elevated/80 active:scale-[0.98]',
     ghost     : 'text-muted hover:text-headline hover:bg-elevated/50 active:scale-[0.98]',
   }
 

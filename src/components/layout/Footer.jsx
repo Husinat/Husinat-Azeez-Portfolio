@@ -40,7 +40,7 @@ export function Footer() {
                 target={key !== 'email' ? '_blank' : undefined}
                 rel={key !== 'email' ? 'noopener noreferrer' : undefined}
                 aria-label={label}
-                className="text-muted/60 hover:text-teal transition-colors duration-200"
+                className="text-muted/60 hover:text-amber transition-colors duration-200"
               >
                 <Icon size={16} />
               </a>

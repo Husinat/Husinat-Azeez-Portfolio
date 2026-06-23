@@ -14,7 +14,7 @@ export function ProgressConnector({ progress = 0 }) {
       <div className="hidden md:flex items-center flex-1 min-w-[18px] px-1">
         <div className="h-px w-full overflow-hidden rounded-full bg-elevated">
           <div
-            className="h-full bg-teal transition-all duration-500 ease-out"
+            className="h-full bg-amber transition-all duration-500 ease-out"
             style={{ width: fill }}
           />
         </div>
@@ -24,7 +24,7 @@ export function ProgressConnector({ progress = 0 }) {
       <div className="flex md:hidden justify-center w-full">
         <div className="h-8 w-px overflow-hidden rounded-full bg-elevated">
           <div
-            className="w-full bg-teal transition-all duration-500 ease-out"
+            className="w-full bg-amber transition-all duration-500 ease-out"
             style={{ height: fill }}
           />
         </div>

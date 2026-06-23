@@ -10,12 +10,12 @@ export function RepoCard({ repo }) {
   const isPublic = Boolean(repo.url)
 
   return (
-    <article className="group flex min-h-52 flex-col gap-4 rounded-xl border border-elevated bg-surface p-5 transition-all duration-300 hover:-translate-y-1 hover:border-teal/40 hover:bg-elevated/50">
+    <article className="group flex min-h-52 flex-col gap-4 rounded-xl border border-elevated bg-surface p-5 transition-all duration-300 hover:-translate-y-1 hover:border-amber/40 hover:bg-elevated/50">
 
       {/* Header */}
       <div className="flex items-start justify-between gap-3">
         <div className="flex-1 min-w-0">
-          <p className="mb-2 font-mono text-[10px] uppercase tracking-widest text-teal">
+          <p className="mb-2 font-mono text-[10px] uppercase tracking-widest text-amber">
             {isPublic ? 'Public repository' : 'Repository profile'}
           </p>
           <h3 className="font-mono text-sm font-medium text-headline truncate mb-1">
@@ -32,7 +32,7 @@ export function RepoCard({ repo }) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`View ${repo.name} on GitHub`}
-            className="shrink-0 text-muted hover:text-teal transition-colors duration-200"
+            className="shrink-0 text-muted hover:text-amber transition-colors duration-200"
           >
             <ExternalLink size={15} />
           </a>

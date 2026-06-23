@@ -10,7 +10,7 @@ export function FeaturedProjectCard({ project }) {
   const hasLinks = project.github || (project.live && project.status !== 'building')
 
   return (
-    <article className="group grid overflow-hidden rounded-2xl border border-elevated bg-surface transition-all duration-300 hover:-translate-y-1 hover:border-teal/40 hover:shadow-[0_24px_70px_rgba(0,0,0,0.22)] md:grid-cols-[0.9fr_1.1fr]">
+    <article className="group grid overflow-hidden rounded-2xl border border-elevated bg-surface transition-all duration-300 hover:-translate-y-1 hover:border-amber/40 hover:shadow-[0_24px_70px_rgba(0,0,0,0.22)] md:grid-cols-[0.9fr_1.1fr]">
 
       {/* Image */}
       <div className="relative min-h-56 overflow-hidden bg-elevated">
@@ -29,14 +29,14 @@ export function FeaturedProjectCard({ project }) {
 
         {/* Status badge */}
         {project.status === 'building' && (
-          <div className="absolute top-3 right-3 flex items-center gap-1.5 bg-space/80 backdrop-blur-sm border border-teal/30 text-teal font-mono text-xs px-2.5 py-1 rounded-full">
+          <div className="absolute top-3 right-3 flex items-center gap-1.5 bg-space/80 backdrop-blur-sm border border-amber/30 text-amber font-mono text-xs px-2.5 py-1 rounded-full">
             <Wrench size={11} />
             Building
           </div>
         )}
         {project.status === 'live' && (
-          <div className="absolute top-3 right-3 flex items-center gap-1.5 bg-space/80 backdrop-blur-sm border border-teal/30 text-teal font-mono text-xs px-2.5 py-1 rounded-full">
-            <span className="w-1.5 h-1.5 rounded-full bg-teal" />
+          <div className="absolute top-3 right-3 flex items-center gap-1.5 bg-space/80 backdrop-blur-sm border border-amber/30 text-amber font-mono text-xs px-2.5 py-1 rounded-full">
+            <span className="w-1.5 h-1.5 rounded-full bg-amber" />
             Live
           </div>
         )}
@@ -45,7 +45,7 @@ export function FeaturedProjectCard({ project }) {
       {/* Content */}
       <div className="flex flex-col gap-4 p-5 md:p-6">
         <div>
-          <p className="mb-3 font-mono text-xs uppercase tracking-widest text-teal">
+          <p className="mb-3 font-mono text-xs uppercase tracking-widest text-amber">
             Featured case study
           </p>
           <h3 className="mb-2 font-display text-2xl leading-tight text-headline">
@@ -96,7 +96,7 @@ export function FeaturedProjectCard({ project }) {
               href={project.live}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 font-mono text-xs text-teal hover:text-teal/80 transition-colors duration-200"
+              className="inline-flex items-center gap-1.5 font-mono text-xs text-amber hover:text-amber/80 transition-colors duration-200"
             >
               <ExternalLink size={13} />
               Live

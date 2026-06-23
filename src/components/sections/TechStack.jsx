@@ -12,7 +12,7 @@ function TechCard({ item }) {
   const IconComponent = SiIcons[item.icon]
 
   return (
-    <div className="group flex min-h-32 flex-col items-center justify-center gap-3 rounded-xl border border-elevated bg-surface p-4 transition-all duration-300 hover:-translate-y-1 hover:border-teal/40 hover:bg-elevated/50">
+    <div className="group flex min-h-32 flex-col items-center justify-center gap-3 rounded-xl border border-elevated bg-surface p-4 transition-all duration-300 hover:-translate-y-1 hover:border-amber/40 hover:bg-elevated/50">
       {IconComponent ? (
         <IconComponent
           size={34}
@@ -73,7 +73,7 @@ export function TechStack() {
           </div>
 
           <div className="max-w-sm">
-            <p className="font-mono text-xs uppercase tracking-widest text-teal">
+            <p className="font-mono text-xs uppercase tracking-widest text-amber">
               {activeCategory}
             </p>
             <p className="mt-1 font-body text-sm leading-relaxed text-muted">

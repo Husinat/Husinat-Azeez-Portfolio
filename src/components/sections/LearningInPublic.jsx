@@ -10,7 +10,7 @@ function ArticleCard({ card, index }) {
   const isPublished = Boolean(card.linkedinUrl)
 
   return (
-    <article className="group flex min-h-72 flex-col overflow-hidden rounded-xl border border-elevated bg-surface transition-all duration-300 hover:-translate-y-1 hover:border-teal/40">
+    <article className="group flex min-h-72 flex-col overflow-hidden rounded-xl border border-elevated bg-surface transition-all duration-300 hover:-translate-y-1 hover:border-amber/40">
       <div className="relative h-36 overflow-hidden bg-elevated">
         {card.image ? (
           <img
@@ -20,10 +20,10 @@ function ArticleCard({ card, index }) {
           />
         ) : (
           <div className="flex h-full w-full items-center justify-center bg-space/30">
-            <PenLine size={30} className="text-teal/60" />
+            <PenLine size={30} className="text-amber/60" />
           </div>
         )}
-        <div className="absolute left-3 top-3 rounded-full border border-teal/20 bg-space/80 px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest text-teal backdrop-blur">
+        <div className="absolute left-3 top-3 rounded-full border border-amber/20 bg-space/80 px-2.5 py-1 font-mono text-[10px] uppercase tracking-widest text-amber backdrop-blur">
           {isPublished ? 'Published' : `Draft ${String(index + 1).padStart(2, '0')}`}
         </div>
       </div>
@@ -47,7 +47,7 @@ function ArticleCard({ card, index }) {
               href={card.linkedinUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 font-mono text-xs text-teal transition-colors duration-200 hover:text-teal/80"
+              className="inline-flex items-center gap-1.5 font-mono text-xs text-amber transition-colors duration-200 hover:text-amber/80"
             >
               <Linkedin size={12} />
               Read
@@ -81,7 +81,7 @@ export function LearningInPublic() {
 
         <div className="mb-6 grid gap-4 rounded-2xl border border-elevated/80 bg-space/25 p-5 md:grid-cols-[1fr_auto] md:items-center">
           <div>
-            <p className="font-mono text-xs uppercase tracking-widest text-teal">
+            <p className="font-mono text-xs uppercase tracking-widest text-amber">
               Active writing queue
             </p>
             <p className="mt-2 max-w-2xl font-body text-sm leading-7 text-muted">

@@ -22,16 +22,16 @@ export function ChapterCard({
       aria-expanded={isExpanded}
       className={[
         'group relative flex min-w-[120px] flex-col items-start overflow-hidden rounded-xl p-4 text-left md:min-w-0',
-        'transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal/60',
+        'transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber/60',
         'border',
         isActive || isExpanded
-          ? 'bg-surface border-teal/60 shadow-[0_18px_45px_rgba(0,0,0,0.18)]'
-          : 'bg-space/35 border-elevated hover:border-teal/35 hover:bg-surface/80 opacity-78 hover:opacity-100',
+          ? 'bg-surface border-amber/60 shadow-[0_18px_45px_rgba(0,0,0,0.18)]'
+          : 'bg-space/35 border-elevated hover:border-amber/35 hover:bg-surface/80 opacity-78 hover:opacity-100',
       ].join(' ')}
     >
       <span
         className={[
-          'absolute inset-x-0 top-0 h-0.5 origin-left bg-teal transition-transform duration-500',
+          'absolute inset-x-0 top-0 h-0.5 origin-left bg-amber transition-transform duration-500',
           isPassed || isExpanded ? 'scale-x-100' : 'scale-x-0',
         ].join(' ')}
       />
@@ -39,7 +39,7 @@ export function ChapterCard({
         <span
           className={[
             'grid h-8 w-8 place-items-center rounded-full border font-mono text-xs font-medium transition-colors duration-200',
-            isActive || isExpanded ? 'border-teal/50 bg-teal/10 text-teal' : 'border-elevated bg-surface/70 text-muted group-hover:text-teal',
+            isActive || isExpanded ? 'border-amber/50 bg-amber/10 text-amber' : 'border-elevated bg-surface/70 text-muted group-hover:text-amber',
           ].join(' ')}
         >
           {chapter.chapter}
@@ -57,7 +57,7 @@ export function ChapterCard({
       <span
         className={[
           'mt-3 font-mono text-[10px] uppercase tracking-widest transition-all duration-300',
-          isActive || isExpanded ? 'text-teal opacity-100' : 'text-muted/50 opacity-0 group-hover:opacity-100',
+          isActive || isExpanded ? 'text-amber opacity-100' : 'text-muted/50 opacity-0 group-hover:opacity-100',
         ].join(' ')}
       >
         {isExpanded ? 'Reading' : 'Open chapter'}

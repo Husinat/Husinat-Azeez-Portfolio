@@ -7,12 +7,21 @@ export default {
   theme: {
     extend: {
       colors: {
-        space:    '#0F1117',
-        surface:  '#1A1D27',
-        elevated: '#2E3244',
-        teal:     '#5FBFAD',
-        muted:    '#A8B2C8',
-        headline: '#E8EDF5',
+        // ── Warm Obsidian System ──────────────────────────────
+        space:    '#141210',   // Deep background
+        surface:  '#1E1B18',   // Card / navbar surface
+        elevated: '#2C2824',   // Elevated card / hover surface
+        border:   '#332E2A',   // Borders and dividers
+        headline: '#F0EBE3',   // Primary headlines
+        muted:    '#A89F94',   // Body text / secondary text
+        dim:      '#6B6259',   // Tertiary / placeholder text
+
+        // ── Accents ───────────────────────────────────────────
+        amber:    '#C8956C',   // Primary accent — terracotta/amber
+        'amber-dim':  '#8A5A38',   // Pressed / deep amber state
+        'amber-glow': '#D4A882',   // Hover / lighter amber state
+        sage:     '#7EB8A4',   // Secondary accent — muted sage
+        'sage-dim':   '#4A8A78',   // Deep sage for borders
       },
       fontFamily: {
         display: ['"DM Serif Display"', 'serif'],
@@ -20,12 +29,12 @@ export default {
         mono:    ['"JetBrains Mono"', 'monospace'],
       },
       animation: {
-        'fade-in':    'fadeIn 0.5s ease forwards',
-        'slide-up':   'slideUp 0.5s ease forwards',
-        'fade-up':    'fadeUp 0.65s ease forwards',
-        'scale-in':   'scaleIn 0.5s ease forwards',
-        'panel-in':   'panelIn 0.55s ease forwards',
-        'connector':  'connector 0.8s ease forwards',
+        'fade-in':   'fadeIn 0.5s ease forwards',
+        'slide-up':  'slideUp 0.5s ease forwards',
+        'fade-up':   'fadeUp 0.65s ease forwards',
+        'scale-in':  'scaleIn 0.5s ease forwards',
+        'panel-in':  'panelIn 0.55s ease forwards',
+        'connector': 'connector 0.8s ease forwards',
       },
       keyframes: {
         fadeIn: {
@@ -52,6 +61,11 @@ export default {
           from: { width: '0%' },
           to:   { width: '100%' },
         },
+      },
+      boxShadow: {
+        'amber-glow': '0 0 24px rgba(200, 149, 108, 0.12)',
+        'card':       '0 2px 16px rgba(0, 0, 0, 0.28)',
+        'panel':      '0 24px 80px rgba(0, 0, 0, 0.40)',
       },
     },
   },

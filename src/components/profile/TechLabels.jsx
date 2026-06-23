@@ -17,7 +17,7 @@ export function TechLabels({ labels = [], currentlyBuilding }) {
       {currentlyBuilding && (
         <p className="font-mono text-xs text-muted">
           Currently Building:{' '}
-          <span className="text-teal">{currentlyBuilding}</span>
+          <span className="text-amber">{currentlyBuilding}</span>
         </p>
       )}
     </div>

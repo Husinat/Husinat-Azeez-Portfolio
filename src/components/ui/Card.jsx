@@ -7,7 +7,7 @@ export function Card({ children, variant = 'default', className = '', as: Tag = 
   const base = 'bg-surface border border-elevated rounded-xl'
   const variants = {
     default : '',
-    hover   : 'transition-all duration-300 hover:border-teal/40 hover:bg-elevated/50',
+    hover   : 'transition-all duration-300 hover:border-amber/40 hover:bg-elevated/50',
   }
 
   return (

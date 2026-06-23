@@ -8,7 +8,7 @@ export function Tag({ children, variant = 'default', className = '' }) {
 
   const variants = {
     default : 'bg-elevated text-muted',
-    teal    : 'bg-teal/10 text-teal border border-teal/20',
+    teal    : 'bg-amber/10 text-amber border border-amber/20',
     outline : 'border border-elevated text-muted',
   }
 

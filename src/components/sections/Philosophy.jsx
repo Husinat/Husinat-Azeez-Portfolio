@@ -22,7 +22,7 @@ export function Philosophy() {
               className="group grid gap-4 border-b border-elevated p-6 transition-colors duration-300 last:border-b-0 hover:bg-elevated/35 md:grid-cols-[120px_1fr]"
             >
               {/* Index number */}
-              <p className="select-none font-mono text-5xl font-medium leading-none text-elevated transition-colors duration-300 group-hover:text-teal/25 md:text-6xl">
+              <p className="select-none font-mono text-5xl font-medium leading-none text-elevated transition-colors duration-300 group-hover:text-amber/25 md:text-6xl">
                 {String(index + 1).padStart(2, '0')}
               </p>
 

@@ -7,7 +7,7 @@ import { Tag }    from '../ui/Tag'
  */
 export function SmallProjectCard({ project }) {
   return (
-    <div className="group flex flex-col gap-3 rounded-xl border border-elevated bg-surface p-5 transition-all duration-300 hover:-translate-y-1 hover:border-teal/40 hover:bg-elevated/50">
+    <div className="group flex flex-col gap-3 rounded-xl border border-elevated bg-surface p-5 transition-all duration-300 hover:-translate-y-1 hover:border-amber/40 hover:bg-elevated/50">
 
       <div className="flex items-start justify-between gap-2">
         <h3 className="font-body text-sm font-semibold text-headline leading-snug">
@@ -19,7 +19,7 @@ export function SmallProjectCard({ project }) {
             target="_blank"
             rel="noopener noreferrer"
             aria-label={`View ${project.title} on GitHub`}
-            className="shrink-0 text-muted hover:text-teal transition-colors duration-200"
+            className="shrink-0 text-muted hover:text-amber transition-colors duration-200"
           >
             <Github size={15} />
           </a>

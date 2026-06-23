@@ -19,7 +19,7 @@ export function GitHub() {
 
         <div className="mb-6 grid gap-4 rounded-2xl border border-elevated/80 bg-space/25 p-5 md:grid-cols-[1fr_auto] md:items-center">
           <div>
-            <p className="font-mono text-xs uppercase tracking-widest text-teal">
+            <p className="font-mono text-xs uppercase tracking-widest text-amber">
               Repository highlights
             </p>
             <p className="mt-2 max-w-2xl font-body text-sm leading-7 text-muted">

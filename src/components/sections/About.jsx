@@ -35,8 +35,8 @@ export function About() {
 
           <div className="rounded-2xl border border-elevated bg-space/30 p-5">
             <div className="mb-5 flex items-center justify-between gap-4">
-              <p className="font-mono text-xs uppercase tracking-widest text-teal">Professional snapshot</p>
-              <span className="rounded-full border border-teal/20 bg-teal/10 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-teal">
+              <p className="font-mono text-xs uppercase tracking-widest text-amber">Professional snapshot</p>
+              <span className="rounded-full border border-amber/20 bg-amber/10 px-3 py-1 font-mono text-[10px] uppercase tracking-widest text-amber">
                 {profile.role}
               </span>
             </div>

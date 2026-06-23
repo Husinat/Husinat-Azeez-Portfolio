@@ -46,7 +46,7 @@ export function Navbar() {
         {/* Logo */}
         <a
           href="#hero"
-          className="font-display text-headline text-lg hover:text-teal transition-colors duration-200"
+          className="font-display text-headline text-lg hover:text-amber transition-colors duration-200"
           onClick={handleNavClick}
         >
           Husinat Azeez
@@ -63,7 +63,7 @@ export function Navbar() {
                   className={[
                     'font-body text-sm px-3 py-1.5 rounded-md transition-all duration-200',
                     isActive
-                      ? 'text-teal'
+                      ? 'text-amber'
                       : 'text-muted hover:text-headline',
                   ].join(' ')}
                 >
@@ -80,7 +80,7 @@ export function Navbar() {
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen((prev) => !prev)}
-          className="md:hidden flex flex-col gap-1.5 p-2 text-muted hover:text-headline focus:outline-none focus-visible:ring-2 focus-visible:ring-teal/60 rounded"
+          className="md:hidden flex flex-col gap-1.5 p-2 text-muted hover:text-headline focus:outline-none focus-visible:ring-2 focus-visible:ring-amber/60 rounded"
         >
           <span
             className={[
@@ -121,7 +121,7 @@ export function Navbar() {
                   className={[
                     'block font-body text-sm py-2.5 px-3 rounded-md transition-all duration-200',
                     isActive
-                      ? 'text-teal bg-teal/5'
+                      ? 'text-amber bg-amber/5'
                       : 'text-muted hover:text-headline hover:bg-elevated/50',
                   ].join(' ')}
                 >

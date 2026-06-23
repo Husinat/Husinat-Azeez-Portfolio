@@ -35,8 +35,8 @@ export function CurrentFocus() {
 
         <div className="grid gap-4 md:grid-cols-3">
           {focusGroups.map((group) => (
-            <article key={group.title} className="rounded-2xl border border-elevated bg-surface/80 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-teal/35">
-              <p className="font-mono text-xs uppercase tracking-widest text-teal">{group.title}</p>
+            <article key={group.title} className="rounded-2xl border border-elevated bg-surface/80 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-amber/35">
+              <p className="font-mono text-xs uppercase tracking-widest text-amber">{group.title}</p>
               <p className="mt-3 min-h-12 font-body text-sm leading-relaxed text-muted">
                 {group.description}
               </p>
