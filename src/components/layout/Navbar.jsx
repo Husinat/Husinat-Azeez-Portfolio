@@ -2,11 +2,9 @@ import { useState, useEffect } from 'react'
 import { useScrollSpy }        from '../../hooks/useScrollSpy'
 
 const NAV_ITEMS = [
-  { label: 'About',    id: 'about'    },
-  { label: 'Journey',  id: 'evolution' }, // "Journey" label → #evolution
+  { label: 'Journey',  id: 'journey'  },
+  { label: 'Tech Stack', id: 'stack'  },
   { label: 'Projects', id: 'projects' },
-  { label: 'Learning', id: 'learning' },
-  { label: 'GitHub',   id: 'github'   },
   { label: 'Contact',  id: 'contact'  },
 ]
 
@@ -46,7 +44,7 @@ export function Navbar() {
         {/* Logo */}
         <a
           href="#hero"
-          className="font-display text-headline text-lg hover:text-amber transition-colors duration-200"
+          className="font-display text-headline text-lg hover:text-terracotta transition-colors duration-200"
           onClick={handleNavClick}
         >
           Husinat Azeez
@@ -63,7 +61,7 @@ export function Navbar() {
                   className={[
                     'font-body text-sm px-3 py-1.5 rounded-md transition-all duration-200',
                     isActive
-                      ? 'text-amber'
+                      ? 'text-terracotta'
                       : 'text-muted hover:text-headline',
                   ].join(' ')}
                 >
@@ -80,7 +78,7 @@ export function Navbar() {
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen((prev) => !prev)}
-          className="md:hidden flex flex-col gap-1.5 p-2 text-muted hover:text-headline focus:outline-none focus-visible:ring-2 focus-visible:ring-amber/60 rounded"
+          className="md:hidden flex flex-col gap-1.5 p-2 text-muted hover:text-headline focus:outline-none focus-visible:ring-2 focus-visible:ring-terracotta/60 rounded"
         >
           <span
             className={[
@@ -121,7 +119,7 @@ export function Navbar() {
                   className={[
                     'block font-body text-sm py-2.5 px-3 rounded-md transition-all duration-200',
                     isActive
-                      ? 'text-amber bg-amber/5'
+                      ? 'text-terracotta bg-terracotta/5'
                       : 'text-muted hover:text-headline hover:bg-elevated/50',
                   ].join(' ')}
                 >

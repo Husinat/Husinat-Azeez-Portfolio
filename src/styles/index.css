@@ -18,7 +18,7 @@
   }
 
   ::selection {
-    @apply bg-amber/25 text-headline;
+    @apply bg-terracotta/25 text-headline;
   }
 
   ::-webkit-scrollbar {
@@ -34,7 +34,7 @@
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-amber/40;
+    @apply bg-terracotta/40;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -51,9 +51,9 @@
 
 @layer components {
 
-  /* ── Layout ─────────────────────────────────────────────── */
+  /* ── Layout & Rhythm ────────────────────────────────────── */
   .section-padding {
-    @apply px-6 py-24 md:px-12 lg:px-24;
+    @apply px-6 py-20 md:px-12 lg:px-20;
   }
 
   .section-inner {
@@ -61,22 +61,30 @@
   }
 
   /*
-   * Section rhythm — alternating surface tints so sections
-   * never bleed into each other visually.
-   * Applied in App.jsx: even sections get section-band-warm.
+   * Editorial Section Divider
+   * Creates a structured transition between pages with a thin terracotta node
    */
+  .section-divider {
+    @apply relative border-t border-border/60 my-4;
+  }
+  .section-divider::after {
+    content: '';
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-terracotta/55 border border-space;
+    box-shadow: 0 0 8px rgba(214, 154, 122, 0.45);
+  }
+
   .section-band {
     @apply relative;
-    border-top: 1px solid rgba(51, 46, 42, 0.6);
+    border-top: 1px solid rgba(48, 39, 35, 0.7);
   }
 
   .section-band-warm {
     @apply relative;
-    background: rgba(30, 27, 24, 0.55);
-    border-top: 1px solid rgba(51, 46, 42, 0.6);
+    background: rgba(32, 26, 24, 0.4);
+    border-top: 1px solid rgba(48, 39, 35, 0.7);
   }
 
-  /* ── Cards ───────────────────────────────────────────────── */
+  /* ── Cards & Panels (Use Sparingly) ───────────────────────── */
   .card-base {
     @apply bg-surface border border-border rounded-xl;
     box-shadow: 0 2px 16px rgba(0, 0, 0, 0.28);
@@ -87,89 +95,74 @@
   }
   .card-hover:hover {
     @apply bg-elevated;
-    border-color: rgba(200, 149, 108, 0.35);
+    border-color: rgba(214, 154, 122, 0.35);
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.36);
-    transform: translateY(-1px);
+    transform: translateY(-2.5px);
   }
 
-  /* Chapter cards in Evolution get a stronger hover */
-  .chapter-card-active {
-    @apply bg-elevated;
-    border-color: rgba(200, 149, 108, 0.55) !important;
-    box-shadow: 0 0 0 1px rgba(200, 149, 108, 0.18), 0 4px 24px rgba(0, 0, 0, 0.36);
-  }
-
-  /* ── Accent utility ──────────────────────────────────────── */
+  /* ── Accents & Labels ────────────────────────────────────── */
   .accent-text {
-    @apply text-amber;
+    @apply text-terracotta;
   }
 
   .accent-badge {
-    @apply bg-amber/10 text-amber border border-amber/25 font-mono text-xs px-2.5 py-1 rounded-md;
+    @apply bg-terracotta/10 text-terracotta border border-terracotta/25 font-mono text-xs px-2.5 py-1 rounded-md;
   }
 
   .accent-badge-sage {
     @apply bg-sage/10 text-sage border border-sage/25 font-mono text-xs px-2.5 py-1 rounded-md;
   }
 
-  /* ── Premium panel (Evolution detail, modals) ────────────── */
+  /* ── Premium Editorial Panel ────────────────────────────── */
   .premium-panel {
     @apply bg-surface border border-border rounded-xl;
-    border-color: rgba(200, 149, 108, 0.28);
+    border-color: rgba(214, 154, 122, 0.25);
     box-shadow:
-      0 0 0 1px rgba(200, 149, 108, 0.10),
+      0 0 0 1px rgba(214, 154, 122, 0.08),
       0 24px 80px rgba(0, 0, 0, 0.40);
   }
 
-  /* ── Connector lines (Evolution track) ───────────────────── */
+  /* ── Timeline thread styles ─────────────────────────────── */
   .connector-line {
-    height: 1px;
-    flex: 1;
-    background: rgba(51, 46, 42, 0.9);
+    width: 2px;
+    background: rgba(48, 39, 35, 0.9);
     transition: background 0.7s ease;
   }
 
   .connector-line.active {
-    background: rgba(200, 149, 108, 0.55);
+    background: rgba(214, 154, 122, 0.55);
   }
 
-  /* ── Glow effects — used sparingly ──────────────────────── */
-  .amber-glow {
-    box-shadow: 0 0 28px rgba(200, 149, 108, 0.14);
+  /* ── Glow effects ────────────────────────────────────────── */
+  .terracotta-glow {
+    box-shadow: 0 0 28px rgba(214, 154, 122, 0.14);
   }
 
   .sage-glow {
-    box-shadow: 0 0 20px rgba(126, 184, 164, 0.12);
+    box-shadow: 0 0 20px rgba(158, 169, 154, 0.12);
   }
 
-  /* ── Utility: subtle section label ──────────────────────── */
+  /* ── Editorial section title eyebrow ─────────────────────── */
   .section-eyebrow {
-    @apply font-mono text-xs text-amber uppercase tracking-widest mb-4;
+    @apply font-mono text-xs text-terracotta uppercase tracking-widest mb-4;
   }
 
-  /* ── Reveal animation helper ─────────────────────────────── */
+  /* ── Motion helpers ──────────────────────────────────────── */
   .reveal-soft {
     opacity: 0;
     animation: fadeUp 0.65s ease forwards;
   }
 
-  /* ── Interactive lift for cards ──────────────────────────── */
   .interactive-lift {
     @apply transition-all duration-300;
   }
   .interactive-lift:hover {
     transform: translateY(-2px);
-    border-color: rgba(200, 149, 108, 0.35);
+    border-color: rgba(214, 154, 122, 0.35);
   }
 
-  /* ── Evolution signature ring ────────────────────────────── */
-  /*
-   * Wraps the entire Evolution section in a very subtle
-   * warm amber border on the left — marks it as the
-   * signature section without changing the layout.
-   */
   .evolution-signature {
-    border-left: 2px solid rgba(200, 149, 108, 0.22);
+    border-left: 2px solid rgba(214, 154, 122, 0.22);
     padding-left: 0;
   }
 

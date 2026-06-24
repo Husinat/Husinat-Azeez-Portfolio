@@ -7,21 +7,19 @@ export default {
   theme: {
     extend: {
       colors: {
-        // ── Warm Obsidian System ──────────────────────────────
-        space:    '#141210',   // Deep background
-        surface:  '#1E1B18',   // Card / navbar surface
-        elevated: '#2C2824',   // Elevated card / hover surface
-        border:   '#332E2A',   // Borders and dividers
-        headline: '#F0EBE3',   // Primary headlines
-        muted:    '#A89F94',   // Body text / secondary text
-        dim:      '#6B6259',   // Tertiary / placeholder text
-
-        // ── Accents ───────────────────────────────────────────
-        amber:    '#C8956C',   // Primary accent — terracotta/amber
-        'amber-dim':  '#8A5A38',   // Pressed / deep amber state
-        'amber-glow': '#D4A882',   // Hover / lighter amber state
-        sage:     '#7EB8A4',   // Secondary accent — muted sage
-        'sage-dim':   '#4A8A78',   // Deep sage for borders
+        // ── Espresso & Rose Copper System ─────────────────────
+        space:      '#161210',   // Deep warm espresso background
+        surface:    '#201A18',   // Terracotta sand card surface
+        elevated:   '#2A221E',   // Elevated card / hover surface
+        border:     '#2D2522',   // Earthy borders and dividers
+        headline:   '#FAF8F5',   // Cream headlines
+        muted:      '#C5BAB3',   // Almond gray body text
+        dim:        '#8E8077',   // Muted helper text
+        terracotta: '#D69A7A',   // Rose copper / primary accent
+        'terracotta-dim': '#A37257', // Pressed / deep accent state
+        'terracotta-glow': 'rgba(214, 154, 122, 0.15)',
+        sage:       '#9EA99A',   // Muted olive sage / secondary accent
+        'sage-dim': '#768172',   // Pressed sage state
       },
       fontFamily: {
         display: ['"DM Serif Display"', 'serif'],
@@ -63,7 +61,7 @@ export default {
         },
       },
       boxShadow: {
-        'amber-glow': '0 0 24px rgba(200, 149, 108, 0.12)',
+        'terracotta-glow': '0 0 24px rgba(214, 154, 122, 0.12)',
         'card':       '0 2px 16px rgba(0, 0, 0, 0.28)',
         'panel':      '0 24px 80px rgba(0, 0, 0, 0.40)',
       },
